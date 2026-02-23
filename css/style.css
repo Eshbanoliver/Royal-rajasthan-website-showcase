@@ -746,7 +746,7 @@ h6 {
    METRICS / COUNTERS
    ===================================================== */
 .metrics-section {
-  background: linear-gradient(rgba(14, 25, 14, 0.85), rgba(14, 25, 14, 0.85)), url('../images/about-image.jpeg');
+  background: linear-gradient(rgba(41, 28, 14, 0.88), rgba(41, 28, 14, 0.88)), url('../images/about-image.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -781,8 +781,8 @@ h6 {
 }
 
 .metric-card:hover {
-  background: #2a7a44;
-  /* Green background from reference */
+  background: var(--clr-dark);
+  /* Brown background from theme */
   transform: scale(1.05);
   z-index: 2;
   border-radius: var(--radius-md);
@@ -817,13 +817,13 @@ h6 {
   display: block;
   margin: 0 0 20px 0;
   font-size: 3rem;
-  color: #2a7a44;
-  /* Theme green icon */
+  color: var(--clr-gold);
+  /* Theme gold icon */
   transition: all var(--transition-normal);
 }
 
 .metric-icon i {
-  border: 2px solid #2a7a44;
+  border: 2px solid var(--clr-gold);
   border-radius: 50%;
   padding: 15px;
 }
