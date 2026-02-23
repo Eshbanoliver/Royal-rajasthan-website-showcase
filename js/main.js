@@ -4,6 +4,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---------- Hero Slider ---------- */
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  if (heroSlides.length > 0) {
+    let currentHeroSlide = 0;
+    setInterval(() => {
+      heroSlides[currentHeroSlide].classList.remove('active');
+      currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+      heroSlides[currentHeroSlide].classList.add('active');
+    }, 5000);
+  }
+
+
+
   /* ---------- Navbar Scroll Effect ---------- */
   const navbar = document.querySelector('.navbar');
   const scrollTopBtn = document.querySelector('.scroll-top');

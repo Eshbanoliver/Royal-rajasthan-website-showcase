@@ -81,7 +81,12 @@ img {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--clr-darkest);
   line-height: 1.3;
@@ -374,8 +379,45 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, var(--clr-darkest) 0%, #3D2B1B 40%, var(--clr-dark) 100%);
+  background-color: var(--clr-darkest);
   overflow: hidden;
+}
+
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 8s linear;
+  transform: scale(1.1);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 28, 14, 0.65);
 }
 
 .hero::before {
@@ -387,6 +429,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 150%;
   background: radial-gradient(ellipse, rgba(201, 169, 110, 0.15) 0%, transparent 70%);
   animation: heroGlow 8s ease-in-out infinite alternate;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero::after {
@@ -398,11 +442,18 @@ h1, h2, h3, h4, h5, h6 {
   height: 120%;
   background: radial-gradient(ellipse, rgba(167, 141, 120, 0.1) 0%, transparent 70%);
   animation: heroGlow 10s ease-in-out infinite alternate-reverse;
+  z-index: 1;
+  pointer-events: none;
 }
 
 @keyframes heroGlow {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(30px, -20px) scale(1.1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
 }
 
 .hero-content {
@@ -506,8 +557,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-30px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
 }
 
 /* =====================================================
@@ -1628,6 +1686,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1639,6 +1698,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1646,8 +1706,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .reveal {
