@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Simulate form submission
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '✓ Message Sent!';
+      submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
       submitBtn.style.background = '#28a745';
       submitBtn.disabled = true;
 
