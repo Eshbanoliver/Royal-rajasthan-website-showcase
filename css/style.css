@@ -155,6 +155,7 @@ h6 {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 14px 32px;
   border-radius: 50px;
@@ -162,47 +163,105 @@ h6 {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  border: none;
-  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+  /* default reserved space */
+  transition: all .5s;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: transparent;
 }
 
+.btn::after,
+.btn::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: .5s ease-out;
+}
+
+.btn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:active {
+  filter: brightness(.8);
+  transform: scale(.98);
+}
+
+/* Base states for various color types */
+
 .btn-primary {
-  background: linear-gradient(135deg, var(--clr-dark), var(--clr-darkest));
-  color: var(--clr-white);
-  box-shadow: 0 4px 20px rgba(110, 71, 59, 0.4);
+  border-color: var(--clr-dark);
+  color: var(--clr-dark);
+  box-shadow: 0 4px 20px rgba(110, 71, 59, 0.15);
+}
+
+.btn-primary::after,
+.btn-primary::before {
+  background-color: var(--clr-dark);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--clr-gold), var(--clr-dark));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(110, 71, 59, 0.5);
+  color: var(--clr-white);
+  box-shadow: 0 8px 30px rgba(110, 71, 59, 0.4);
 }
 
 .btn-outline {
-  background: transparent;
+  border-color: var(--clr-gold);
   color: var(--clr-white);
-  border: 2px solid var(--clr-gold);
+}
+
+.btn-outline::after,
+.btn-outline::before {
+  background-color: var(--clr-gold);
 }
 
 .btn-outline:hover {
-  background: var(--clr-gold);
   color: var(--clr-darkest);
-  transform: translateY(-2px);
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-light));
+  border-color: var(--clr-gold);
   color: var(--clr-darkest);
-  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.4);
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.2);
+}
+
+/* For gold button, we do an inverted style so the background is solid initially */
+.btn-gold {
+  background: var(--clr-gold);
+  color: var(--clr-darkest);
+}
+
+.btn-gold::after,
+.btn-gold::before {
+  background-color: var(--clr-darkest);
 }
 
 .btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.5);
+  color: var(--clr-gold);
+  border-color: var(--clr-darkest);
 }
 
+/* Keep solid styles for utility buttons like whatsapp/call */
 .btn-whatsapp {
   background: var(--clr-whatsapp);
   color: var(--clr-white);
@@ -213,6 +272,11 @@ h6 {
   transform: translateY(-2px);
 }
 
+.btn-whatsapp::after,
+.btn-whatsapp::before {
+  display: none;
+}
+
 .btn-call {
   background: var(--clr-call);
   color: var(--clr-white);
@@ -221,6 +285,11 @@ h6 {
 .btn-call:hover {
   background: #C0392B;
   transform: translateY(-2px);
+}
+
+.btn-call::after,
+.btn-call::before {
+  display: none;
 }
 
 /* =====================================================
