@@ -210,9 +210,10 @@ h6 {
 /* Base states for various color types */
 
 .btn-primary {
-  border-color: var(--clr-dark);
-  color: var(--clr-dark);
-  box-shadow: 0 4px 20px rgba(110, 71, 59, 0.15);
+  background-color: var(--clr-gold);
+  border-color: var(--clr-gold);
+  color: var(--clr-darkest);
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.2);
 }
 
 .btn-primary::after,
@@ -222,6 +223,7 @@ h6 {
 
 .btn-primary:hover {
   color: var(--clr-white);
+  border-color: var(--clr-dark);
   box-shadow: 0 8px 30px rgba(110, 71, 59, 0.4);
 }
 
