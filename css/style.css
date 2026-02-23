@@ -1026,183 +1026,131 @@ h6 {
 }
 
 .mv-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  position: relative;
-  z-index: 2;
-}
-
-.sazzad-card {
-  position: relative;
-  width: 100%;
-  min-height: 400px;
-  border-radius: 24px;
-  overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 50px 40px;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow:
-    0 15px 35px rgba(41, 28, 14, 0.05),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  gap: 30px;
 }
 
-.sazzad-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 40px 80px rgba(41, 28, 14, 0.12);
-  border-color: rgba(201, 169, 110, 0.3);
-}
-
-.sazzad-bg {
-  position: absolute;
-  inset: 12px;
-  /* Architectural Grid Pattern on Card Background */
-  background-image:
-    linear-gradient(rgba(41, 28, 14, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(41, 28, 14, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(41, 28, 14, 0.02) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(41, 28, 14, 0.02) 2px, transparent 2px);
-  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
-  background-color: #fff;
-  border-radius: 18px;
-  backdrop-filter: blur(10px);
-  z-index: 2;
-  transition: all 0.5s ease;
-}
-
-.sazzad-card:hover .sazzad-bg {
-  inset: 8px;
-  background: rgba(255, 255, 255, 0.98);
-}
-
-.sazzad-aurora {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  filter: blur(50px);
-  z-index: 1;
-  animation: sazzad-aurora-move 10s infinite alternate ease-in-out;
-  opacity: 0.4;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.sazzad-card:hover .sazzad-aurora {
-  opacity: 0.8;
-  animation-duration: 5s;
-}
-
-.sazzad-card.mission .sazzad-aurora {
-  background: radial-gradient(circle,
-      rgba(110, 71, 59, 0.6),
-      rgba(167, 141, 120, 0.3),
-      transparent 70%);
-}
-
-.sazzad-card.vision .sazzad-aurora {
-  background: radial-gradient(circle,
-      rgba(201, 169, 110, 0.6),
-      rgba(226, 201, 146, 0.3),
-      transparent 70%);
-}
-
-.sazzad-content {
+.solution_card {
+  flex: 0 1 calc(50% - 15px);
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  border-radius: 15px;
+  padding: 30px 25px;
   position: relative;
-  z-index: 5;
-  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 280px;
+  transition: 0.7s;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  align-items: flex-start;
 }
 
-.mv-icon {
-  width: 80px;
-  height: 80px;
+.solution_card:hover {
+  background: var(--clr-dark);
+  color: #fff;
+  transform: scale(1.05);
+  z-index: 9;
+}
+
+.solution_card:hover .solu_title h3,
+.solution_card:hover .solu_description p {
+  color: #fff;
+}
+
+.solution_card:before {
+  content: "";
+  position: absolute;
+  background: rgba(201, 169, 110, 0.1);
+  width: 170px;
+  height: 400px;
+  z-index: -1;
+  transform: rotate(42deg);
+  right: -56px;
+  top: -23px;
+  border-radius: 35px;
+}
+
+.solution_card:hover:before {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.solution_card .so_top_icon {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
-  margin-bottom: 5px;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.sazzad-card.mission .mv-icon {
-  background: linear-gradient(135deg, var(--clr-dark), var(--clr-darkest));
-  color: var(--clr-white);
-}
-
-.sazzad-card.vision .mv-icon {
-  background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-light));
-  color: var(--clr-darkest);
-}
-
-.sazzad-card:hover .mv-icon {
-  transform: scale(1.15) rotate(10deg);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.sazzad-content h3 {
   font-size: 1.8rem;
-  font-family: var(--font-heading);
+  color: var(--clr-dark);
+  transition: 0.7s;
+}
+
+.solution_card:hover .so_top_icon {
+  background: var(--clr-gold);
   color: var(--clr-darkest);
-  margin-bottom: 8px;
-  font-weight: 700;
 }
 
-.sazzad-content p {
-  color: var(--clr-text-light);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  max-width: 90%;
+.solu_title h3 {
+  color: #212121;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  transition: 0.7s;
 }
 
-@keyframes sazzad-aurora-move {
-  0% {
-    transform: translate(-70%, -60%) scale(1) rotate(0deg);
-  }
-
-  33% {
-    transform: translate(10%, -40%) scale(1.2) rotate(120deg);
-  }
-
-  66% {
-    transform: translate(30%, 30%) scale(0.9) rotate(240deg);
-  }
-
-  100% {
-    transform: translate(-70%, -60%) scale(1) rotate(360deg);
-  }
+.solu_description p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  transition: 0.7s;
 }
 
-@media (max-width: 992px) {
-  .mv-grid {
-    gap: 30px;
-  }
+.read_more_btn {
+  border: 0;
+  border-radius: 15px;
+  background: var(--clr-gold) !important;
+  color: var(--clr-darkest);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  .sazzad-card {
-    padding: 35px 25px;
-    min-height: auto;
-  }
+.solution_card:hover .read_more_btn {
+  background: #fff !important;
+  color: var(--clr-dark);
+}
+
+.hover_color_bubble {
+  position: absolute;
+  background: rgba(201, 169, 110, 0.15);
+  width: 100rem;
+  height: 100rem;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  top: 16rem;
+  border-radius: 50%;
+  transform: rotate(-36deg);
+  left: -18rem;
+  transition: 0.7s;
+}
+
+.solution_card:hover .hover_color_bubble {
+  top: 0rem;
 }
 
 @media (max-width: 768px) {
-  .mv-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .mission-vision::before {
-    font-size: 15rem;
+  .solution_card {
+    flex: 0 1 100%;
   }
 }
 
