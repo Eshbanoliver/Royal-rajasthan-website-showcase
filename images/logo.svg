@@ -1,0 +1,59 @@
+<svg width="200" height="240" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Group for Logo Mark -->
+  <g transform="translate(45, 10)" fill="#4A3121">
+    
+    <!-- Top left cabinet cap -->
+    <path d="M 0,10 Q 30,0 60,10 L 60,15 L 0,15 Z" />
+    <rect x="0" y="15" width="60" height="4" />
+    
+    <!-- Cabinet diagonal slashes (top section) -->
+    <g stroke="#4A3121" stroke-width="1.5">
+      <line x1="0" y1="21" x2="60" y2="21" />
+      <line x1="0" y1="40" x2="60" y2="40" />
+      <line x1="5" y1="21" x2="24" y2="40" />
+      <line x1="15" y1="21" x2="34" y2="40" />
+      <line x1="25" y1="21" x2="44" y2="40" />
+      <line x1="35" y1="21" x2="54" y2="40" />
+      <line x1="45" y1="21" x2="60" y2="36" />
+      <line x1="55" y1="21" x2="60" y2="26" />
+      <line x1="0" y1="26" x2="14" y2="40" />
+      <line x1="0" y1="36" x2="4" y2="40" />
+    </g>
+
+    <!-- Main Cabinet Body -->
+    <path d="M 0,40 L 0,110 L 5,110 L 5,115 L 10,115 L 10,110 L 50,110 L 50,115 L 55,115 L 55,110 L 60,110 L 60,40 Z M 27,45 L 27,70 L 5,70 L 5,45 Z M 55,45 L 55,70 L 33,70 L 33,45 Z M 55,75 L 55,90 L 5,90 L 5,75 Z M 55,95 L 55,105 L 5,105 L 5,95 Z" />
+    
+    <!-- Cabinet details -->
+    <circle cx="20" cy="57" r="1.5" />
+    <circle cx="40" cy="57" r="1.5" />
+    <circle cx="30" cy="82.5" r="1.5" />
+    <circle cx="30" cy="100" r="1.5" />
+
+    <!-- Letter R Right Curved Body -->
+    <path d="M 60,25 C 150,25 150,90 60,90" fill="none" stroke="#4A3121" stroke-width="25" />
+    
+    <!-- R Leg Slashes (Bottom right) -->
+    <g transform="translate(68, 70)">
+      <polygon points="10,0 20,0 45,35 35,35" fill="none" stroke="#4A3121" stroke-width="2" />
+      <polygon points="5,0 35,42 45,42 15,0" fill="#4A3121" />
+      
+      <!-- add more diagonal slashes to the leg -->
+      <g stroke="#ffffff" stroke-width="1.5">
+         <line x1="12" y1="5" x2="22" y2="5" />
+         <line x1="15" y1="10" x2="25" y2="10" />
+         <line x1="18" y1="15" x2="28" y2="15" />
+         <line x1="21" y1="20" x2="31" y2="20" />
+         <line x1="24" y1="25" x2="34" y2="25" />
+         <line x1="27" y1="30" x2="37" y2="30" />
+         <line x1="30" y1="35" x2="40" y2="35" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Group for Text -->
+  <g transform="translate(100, 160)" text-anchor="middle" font-family="'Inter', sans-serif" fill="#4A3121">
+    <text y="0" font-size="28" font-weight="800" letter-spacing="2">ROYAL</text>
+    <text y="25" font-size="20" font-weight="700" letter-spacing="1">RAJASTHAN</text>
+    <text y="48" font-size="16" font-weight="600" letter-spacing="3">INTERIORS</text>
+  </g>
+</svg>
