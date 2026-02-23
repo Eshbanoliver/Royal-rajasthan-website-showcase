@@ -459,40 +459,43 @@ h6 {
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
 .hero-glass {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-xl);
-  padding: 60px 50px;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.3);
+  background: rgba(41, 28, 14, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 45px 40px;
+  max-width: 500px;
+  margin: 0;
+  text-align: left;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
 .hero-badge {
   display: inline-block;
   background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-light));
   color: var(--clr-darkest);
-  padding: 8px 24px;
+  padding: 8px 20px;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 24px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
   animation: fadeInDown 0.8s ease;
 }
 
 .hero h2 {
-  font-size: 3.5rem;
+  font-size: 3.1rem;
   color: var(--clr-white);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1.2;
   animation: fadeInUp 1s ease 0.2s both;
 }
@@ -505,17 +508,17 @@ h6 {
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1.15rem;
-  max-width: 550px;
-  margin: 0 auto 36px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  max-width: 100%;
+  margin: 0 0 30px 0;
   animation: fadeInUp 1s ease 0.4s both;
 }
 
 .hero-btns {
   display: flex;
   gap: 16px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   animation: fadeInUp 1s ease 0.6s both;
 }
