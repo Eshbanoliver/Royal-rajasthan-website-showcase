@@ -330,7 +330,9 @@ h6 {
 .nav-brand .nav-logo {
   height: 65px;
   width: auto;
-  filter: brightness(0) invert(1);
+  border-radius: 8px;
+  /* Added slight smoothing for the square wood logo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform var(--transition-fast);
 }
 
