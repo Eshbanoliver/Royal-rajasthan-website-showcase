@@ -635,11 +635,18 @@ h6 {
    PAGE HEADER (inner pages)
    ===================================================== */
 .page-header {
-  padding: 160px 0 80px;
-  background: linear-gradient(135deg, var(--clr-darkest), var(--clr-dark));
+  padding: 180px 0 100px;
+  background: linear-gradient(rgba(41, 28, 14, 0.6), rgba(41, 28, 14, 0.6)), url('../images/WhatsApp Image 2026-02-21 at 2.05.42 PM.jpeg');
+  background-size: cover;
+  background-position: center;
   text-align: center;
   position: relative;
   overflow: hidden;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .page-header::before {
