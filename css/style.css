@@ -1827,13 +1827,26 @@ h6 {
 }
 
 .testimonial-inner {
-  background: rgba(255, 255, 255, 0.6);
+  background: #ffffff;
+  background-image:
+    radial-gradient(circle at 100% 0%, rgba(201, 169, 110, 0.18) 0%, rgba(201, 169, 110, 0.18) 45%, transparent 46.5%),
+    linear-gradient(135deg, #ffffff 0%, #fdf9f4 100%);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(201, 169, 110, 0.2);
   border-radius: var(--radius-lg);
   padding: 45px;
   text-align: center;
-  box-shadow: 0 8px 32px rgba(41, 28, 14, 0.08);
+  box-shadow: 0 10px 40px rgba(41, 28, 14, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  height: 100%;
+}
+
+.testimonial-inner:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(41, 28, 14, 0.1);
+  border-color: var(--clr-gold);
 }
 
 .testimonial-inner .quote-icon {
